@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Beaconna - Dashboard</title>
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="./assets/css/vendor.css">
@@ -36,7 +36,7 @@
           <div class="title">Dashboard</div>
         </a>
       </li>
-      
+
     </ul>
   </div>
   <div class="sidebar-footer">
@@ -159,12 +159,12 @@
   <div class="container">
     <!-- Row 1 -->
     <div class="col-lg-4 col-md-3 col-sm-3 col-xs-6">
-        <a class="card card-banner card-blue-light" href="Inventory.php">
+        <a class="card card-banner card-blue-light" href="inventory.php">
           <div class="card-body">
             <i class="icon fa fa-archive fa-4x"></i>
             <div class="content">
               <div class="title">Invetory</div>
-              
+
             </div>
           </div>
         </a>
@@ -223,7 +223,7 @@
     </div>
 
     <div class="col-lg-4 col-md-3 col-sm-3 col-xs-6">
-        <a class="card card-banner card-blue-light">
+        <a class="card card-banner card-blue-light" href="settings.php">
           <div class="card-body">
             <i class="icon fa fa-cogs fa-4x"></i>
             <div class="content">
@@ -235,9 +235,9 @@
   <!-- Second Row End -->
 </div>
 
-    
 
-<footer class="app-footer" style="bottom: 0; position: absolute;"> 
+
+<footer class="app-footer" style="bottom: 0; position: absolute;">
   <div class="row">
     <div class="col-xs-12">
       <div class="footer-copyright">
@@ -249,7 +249,7 @@
 </div>
 
   </div>
-  
+
   <script type="text/javascript" src="./assets/js/vendor.js"></script>
   <script type="text/javascript" src="./assets/js/app.js"></script>
 
