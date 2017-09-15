@@ -4030,10 +4030,12 @@ ui-view > .app-messaging-container {
       .card.card-green-light .card-body .content .value {
         color: #29c75f; }
       .card.card-green-light:hover {
-        background-color: #29c75f; }
+        /*background-color: #29c75f; */
+      }
         .card.card-green-light:hover .card-body .icon {
           color: #FFF;
-          background-color: rgba(255, 255, 255, 0.1); }
+          /*background-color: rgba(255, 255, 255, 0.1); */
+        }
         .card.card-green-light:hover .card-body .content .title, .card.card-green-light:hover .card-body .content .value {
           color: #FFF; }
     .card.card-green.card-chart .card-header {
@@ -4054,10 +4056,12 @@ ui-view > .app-messaging-container {
       .card.card-blue-light .card-body .content .value {
         color: #39c3da; }
       .card.card-blue-light:hover {
-        background-color: #39c3da; }
+        /*background-color: #39c3da; */
+      }
         .card.card-blue-light:hover .card-body .icon {
           /*color: #FFF;*/
-          background-color: rgba(255, 255, 255, 0.1); }
+          /*background-color: rgba(255, 255, 255, 0.1); */
+        }
         .card.card-blue-light:hover .card-body .content .title, .card.card-blue-light:hover .card-body .content .value {
           color: #FFF; }
     .card.card-blue.card-chart .card-header {

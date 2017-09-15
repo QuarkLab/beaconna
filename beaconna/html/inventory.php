@@ -1,3 +1,12 @@
+<?php
+  // require('query.php');
+  require('dbcon.php');
+
+  $sql = "SELECT * FROM items ORDER BY item_no";
+
+  $res = mysqli_query($conn,$sql);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,6 +86,24 @@
                 <td>Experience the music in your ears a better way ....</td>
                 <td>RS : 55 000/=</td>
               </tr>
+              <?php
+                foreach($res as $item){
+                  echo "<tr>";
+                  echo "<td>";
+                  echo $item['item_no'];
+                  echo "</td>";
+                  echo "<td>";
+                  echo $item['item_name'];
+                  echo "</td>";
+                  echo "<td>";
+                  echo $item['item_desc'];
+                  echo "</td>";
+                  echo "<td>Rs : ";
+                  echo $item['item_price'];
+                  echo "/=</td>";
+                  echo "</tr>";
+                }
+              ?>
             </tbody>
           </table>
         </div>
@@ -95,14 +122,20 @@
           <div class="heading">
           </div>
           <div class="card-body" style="background-color: #272727; padding: 30px;">
-            <form class="form form-horizontal">
+            <form class="form form-horizontal" action="add_item.php" method="POST">
               <div class="section">
                 <div class="section-title"><text class="white"><h3>Add Items</h3></text></div>
                 <div class="section-body">
                   <div class="form-group">
+                    <label class="col-md-3 control-label white">No</label>
+                    <div class="col-md-9">
+                      <input type="text" class="form-control" placeholder="" name="item_no">
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <label class="col-md-3 control-label white">Name</label>
                     <div class="col-md-9">
-                      <input type="text" class="form-control" placeholder="">
+                      <input type="text" class="form-control" placeholder="" name="item_name">
                     </div>
                   </div>
                   <div class="form-group">
@@ -110,7 +143,7 @@
                       <label class="control-label white">Description</label>
                     </div>
                     <div class="col-md-9">
-                      <textarea class="form-control"></textarea>
+                      <textarea class="form-control" name="item_desc"></textarea>
                       <p class="control-label-help white">( short detail of products , 150 max words )</p>
                     </div>
                   </div>
@@ -119,14 +152,14 @@
                     <div class="col-md-9">
                       <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="item_price">
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-3 control-label white">Tags</label>
                     <div class="col-md-9">
-                      <input type="text" class="form-control" placeholder="">
+                      <input type="text" class="form-control" placeholder="" name="item_tags">
                       <p class="control-label-help white">( Enter tags for searching efficiency, seperated by commas )</p>
                     </div>
                   </div>
