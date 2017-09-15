@@ -1,0 +1,39 @@
+body{
+	background-color: #272727;
+}
+
+.card{
+	background-color: #272727 !important;
+	height: 200px;
+}
+
+.navbar .navbar-collapse{
+	background-color: ;
+}
+
+.heading{
+	font-size: 36px;
+	color : white;
+	text-align: center;
+}
+
+.white{
+	color: white;
+	/*font-size: 18px !important;*/
+}
+
+input.form-control, textarea.form-control {
+  border-radius: 2px;
+  padding: 10px 15px;
+  height: auto;
+  font-size: 1em;
+  line-height: auto;
+  border: 1px solid #c8d1d3;
+  background-color: whitesmoke;
+  box-shadow: none;
+  margin-bottom: 15px; 
+}
+
+.input-group-addon{
+	background-color: white !important;
+}
