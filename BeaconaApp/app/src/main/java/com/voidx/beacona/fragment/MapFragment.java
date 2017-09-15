@@ -38,7 +38,7 @@ import com.voidx.beacona.common.ProfilePictureHandler;
 import com.voidx.beacona.R;
 
 import static com.voidx.beacona.global.Session.lastCurrentLocation;
-import static com.voidx.beacona.global.Session.userHashMap;
+import static com.voidx.beacona.global.Session.itemHashMap;
 
 public class MapFragment extends Fragment implements OnMapReadyCallback {
     private static MapFragment fragment;
@@ -106,7 +106,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
                 builder.include(currentLatLng);
-                for(Item item : userHashMap.values()) {
+                for(Item item : itemHashMap.values()) {
                     builder.include(new LatLng(item.latitude, item.longitude));
                     addUserMarker(item);
                     Log.d("item-----", item.firstName);

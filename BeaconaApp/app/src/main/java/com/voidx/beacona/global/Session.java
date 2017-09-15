@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Session {
     public static Location lastCurrentLocation;
-    public static HashMap<Integer, Item> userHashMap = new HashMap<>();
+    public static HashMap<Integer, Item> itemHashMap = new HashMap<>();
 
     static {
         lastCurrentLocation = new Location("");
@@ -21,10 +21,10 @@ public class Session {
         Item kavindaItem = new Item(4, "Kavinda", "", "Niroshan", lastCurrentLocation.getLatitude() + 0.0051, lastCurrentLocation.getLongitude() + 0.0005, "");
         Item supulItem = new Item(5, "Supul", "", "Dulanka", lastCurrentLocation.getLatitude() - 0.0030, lastCurrentLocation.getLongitude() + 0.0004, "");
 
-        userHashMap.put(oshaniItem.id, oshaniItem);
-        userHashMap.put(sumedheItem.id, sumedheItem);
-        userHashMap.put(jinadiItem.id, jinadiItem);
-        userHashMap.put(kavindaItem.id, kavindaItem);
-        userHashMap.put(supulItem.id, supulItem);
+        itemHashMap.put(oshaniItem.id, oshaniItem);
+        itemHashMap.put(sumedheItem.id, sumedheItem);
+        itemHashMap.put(jinadiItem.id, jinadiItem);
+        itemHashMap.put(kavindaItem.id, kavindaItem);
+        itemHashMap.put(supulItem.id, supulItem);
     }
 }
