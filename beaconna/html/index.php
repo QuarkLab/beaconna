@@ -182,7 +182,7 @@
     </div>
 
     <div class="col-lg-4 col-md-3 col-sm-3 col-xs-6">
-        <a class="card card-banner card-blue-light">
+        <a class="card card-banner card-blue-light" href="sales.php">
           <div class="card-body">
             <i class="icon fa fa-shopping-cart fa-4x"></i>
             <div class="content">
@@ -201,7 +201,7 @@
   <!-- Second Row Start -->
   <div class="container">
     <div class="col-lg-4 col-md-3 col-sm-3 col-xs-6">
-        <a class="card card-banner card-blue-light">
+        <a class="card card-banner card-blue-light" href="advertistment.php">
           <div class="card-body">
             <i class="icon fa fa-newspaper-o fa-4x"></i>
             <div class="content">

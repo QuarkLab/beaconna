@@ -37,3 +37,12 @@ input.form-control, textarea.form-control {
 .input-group-addon{
 	background-color: white !important;
 }
+
+.custom-tbl tr{
+	background-color: whitesmoke !important;	
+}
+
+.sales-card .card-mini{
+	background-color: #21b0b7 !important;
+	color : white;
+}
