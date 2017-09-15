@@ -1,0 +1,3 @@
+rootProject.name = 'Beacona_App'
+
+include ':app'
