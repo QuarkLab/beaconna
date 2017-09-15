@@ -1,9 +1,11 @@
-package com.voidx.seek;
+package com.voidx.beacona.common;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+
+import com.voidx.beacona.R;
 
 public class DefaultButton extends android.support.v7.widget.AppCompatButton {
     public DefaultButton(Context context) {

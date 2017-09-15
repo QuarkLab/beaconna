@@ -1,4 +1,4 @@
-package com.voidx.seek;
+package com.voidx.beacona.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -8,15 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class VolunteerFragment extends Fragment {
+import com.voidx.beacona.R;
+
+public class CartFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
-    public VolunteerFragment() {
+    public CartFragment() {
         // Required empty public constructor
     }
 
-    public static VolunteerFragment newInstance() {
-        VolunteerFragment fragment = new VolunteerFragment();
+    public static CartFragment newInstance() {
+        CartFragment fragment = new CartFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -31,13 +33,13 @@ public class VolunteerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_volunteer, container, false);
+        return inflater.inflate(R.layout.fragment_cart, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onVolunteerFragmentInteraction(uri);
+            mListener.onSearchFragmentInteraction(uri);
         }
     }
 
@@ -70,6 +72,6 @@ public class VolunteerFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onVolunteerFragmentInteraction(Uri uri);
+        void onSearchFragmentInteraction(Uri uri);
     }
 }

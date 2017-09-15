@@ -3,4 +3,4 @@
     android:id="@+id/map_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.voidx.seek.MapFragment"></com.google.android.gms.maps.MapView>
+    tools:context="com.voidx.beacona.fragment.MapFragment"></com.google.android.gms.maps.MapView>

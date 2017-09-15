@@ -1,4 +1,4 @@
-package com.voidx.seek;
+package com.voidx.beacona.common;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

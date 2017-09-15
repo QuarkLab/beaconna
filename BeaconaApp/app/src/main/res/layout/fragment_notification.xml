@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.voidx.seek.VolunteerFragment"
+    tools:context="com.voidx.beacona.fragment.NotificationFragment"
     android:background="@drawable/background">
 
 
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.voidx.seek.HeadingTextView
+            <com.voidx.beacona.common.HeadingTextView
                 android:id="@+id/headingTextView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                 app:tag_clickable="true"
                 app:tag_theme="pure_teal" />
 
-            <com.voidx.seek.DefaultButton
+            <com.voidx.beacona.common.DefaultButton
                 android:id="@+id/add_tag_button"
                 android:layout_width="88dp"
                 android:layout_height="48dp"
@@ -105,7 +105,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/subject_tag_view"
                 app:layout_constraintVertical_bias="0.0" />
 
-            <com.voidx.seek.HeadingTextView
+            <com.voidx.beacona.common.HeadingTextView
                 android:id="@+id/headingTextView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/headingTextView3"
                 app:layout_constraintVertical_bias="0.003" />
 
-            <com.voidx.seek.HeadingTextView
+            <com.voidx.beacona.common.HeadingTextView
                 android:id="@+id/headingTextView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/qualifications_text_field" />
 
-            <com.voidx.seek.DefaultButton
+            <com.voidx.beacona.common.DefaultButton
                 android:id="@+id/save_button"
                 android:layout_width="150dp"
                 android:layout_height="48dp"

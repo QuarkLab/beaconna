@@ -1,4 +1,4 @@
-package com.voidx.seek;
+package com.voidx.beacona.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -8,15 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class SearchFragment extends Fragment {
+import com.voidx.beacona.R;
+
+public class NotificationFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
-    public SearchFragment() {
+    public NotificationFragment() {
         // Required empty public constructor
     }
 
-    public static SearchFragment newInstance() {
-        SearchFragment fragment = new SearchFragment();
+    public static NotificationFragment newInstance() {
+        NotificationFragment fragment = new NotificationFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -31,13 +33,13 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+        return inflater.inflate(R.layout.fragment_notification, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onSearchFragmentInteraction(uri);
+            mListener.onVolunteerFragmentInteraction(uri);
         }
     }
 
@@ -70,6 +72,6 @@ public class SearchFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onSearchFragmentInteraction(Uri uri);
+        void onVolunteerFragmentInteraction(Uri uri);
     }
 }

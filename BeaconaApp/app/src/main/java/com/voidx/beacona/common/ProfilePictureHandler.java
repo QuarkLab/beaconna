@@ -1,4 +1,6 @@
-package com.voidx.seek;
+package com.voidx.beacona.common;
+
+import com.voidx.beacona.R;
 
 public class ProfilePictureHandler {
     public static int getProfilePictureResourceId(int userId){

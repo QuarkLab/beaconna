@@ -1,4 +1,4 @@
-package com.voidx.seek;
+package com.voidx.beacona.fragment;
 
 import android.Manifest;
 import android.app.Fragment;
@@ -27,14 +27,18 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.voidx.beacona.common.ImageUtil;
+import com.voidx.beacona.PermissionCode;
+import com.voidx.beacona.common.ProfilePictureHandler;
+import com.voidx.beacona.R;
+import com.voidx.beacona.User;
 
-import static com.voidx.seek.Session.lastCurrentLocation;
-import static com.voidx.seek.Session.userHashMap;
+import static com.voidx.beacona.Session.lastCurrentLocation;
+import static com.voidx.beacona.Session.userHashMap;
 
 public class MapFragment extends Fragment implements OnMapReadyCallback {
     private OnFragmentInteractionListener mListener;

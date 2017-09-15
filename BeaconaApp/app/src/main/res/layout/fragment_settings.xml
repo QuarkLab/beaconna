@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.voidx.seek.ProfileFragment"
+    tools:context="com.voidx.beacona.fragment.SettingsFragment"
     android:background="@drawable/background">
 
     <LinearLayout
@@ -32,7 +32,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.seek.HeadingTextView
+            <com.voidx.beacona.common.HeadingTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -57,7 +57,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.seek.HeadingTextView
+            <com.voidx.beacona.common.HeadingTextView
                 android:id="@+id/headingTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.seek.HeadingTextView
+            <com.voidx.beacona.common.HeadingTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -108,7 +108,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.seek.HeadingTextView
+            <com.voidx.beacona.common.HeadingTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -133,7 +133,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.seek.HeadingTextView
+            <com.voidx.beacona.common.HeadingTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -151,7 +151,7 @@
 
         </LinearLayout>
 
-        <com.voidx.seek.DefaultButton
+        <com.voidx.beacona.common.DefaultButton
             android:id="@+id/button2"
             android:layout_width="150dp"
             android:layout_height="40dp"

@@ -1,4 +1,4 @@
-package com.voidx.seek;
+package com.voidx.beacona;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

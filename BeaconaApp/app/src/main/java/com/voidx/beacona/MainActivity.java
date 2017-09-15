@@ -1,4 +1,4 @@
-package com.voidx.seek;
+package com.voidx.beacona;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -12,9 +12,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity implements SearchFragment.OnFragmentInteractionListener,
-        MapFragment.OnFragmentInteractionListener, VolunteerFragment.OnFragmentInteractionListener,
-ProfileFragment.OnFragmentInteractionListener{
+import com.voidx.beacona.fragment.CartFragment;
+import com.voidx.beacona.fragment.MapFragment;
+import com.voidx.beacona.fragment.NotificationFragment;
+import com.voidx.beacona.fragment.SettingsFragment;
+
+public class MainActivity extends AppCompatActivity implements CartFragment.OnFragmentInteractionListener,
+        MapFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener,
+SettingsFragment.OnFragmentInteractionListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -163,13 +168,13 @@ ProfileFragment.OnFragmentInteractionListener{
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return SearchFragment.newInstance();
-                case 1:
                     return MapFragment.newInstance();
+                case 1:
+                    return CartFragment.newInstance();
                 case 2:
-                    return VolunteerFragment.newInstance();
+                    return NotificationFragment.newInstance();
                 case 3:
-                    return ProfileFragment.newInstance();
+                    return SettingsFragment.newInstance();
                 default:
                     return null;
             }

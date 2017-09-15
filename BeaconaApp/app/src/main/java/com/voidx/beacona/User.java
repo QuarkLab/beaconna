@@ -1,4 +1,4 @@
-package com.voidx.seek;
+package com.voidx.beacona;
 
 public class User {
     public final int id;

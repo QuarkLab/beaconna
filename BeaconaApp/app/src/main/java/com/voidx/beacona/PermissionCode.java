@@ -1,4 +1,4 @@
-package com.voidx.seek;
+package com.voidx.beacona;
 
 public class PermissionCode {
     public static final int MY_PERMISSION_ACCESS_FINE_LOCATION = 1;
