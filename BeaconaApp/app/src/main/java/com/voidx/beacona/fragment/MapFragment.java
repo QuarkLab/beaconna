@@ -31,23 +31,25 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.voidx.beacona.model.Item;
 import com.voidx.beacona.common.ImageUtil;
-import com.voidx.beacona.PermissionCode;
+import com.voidx.beacona.global.PermissionCode;
 import com.voidx.beacona.common.ProfilePictureHandler;
 import com.voidx.beacona.R;
-import com.voidx.beacona.User;
 
-import static com.voidx.beacona.Session.lastCurrentLocation;
-import static com.voidx.beacona.Session.userHashMap;
+import static com.voidx.beacona.global.Session.lastCurrentLocation;
+import static com.voidx.beacona.global.Session.userHashMap;
 
 public class MapFragment extends Fragment implements OnMapReadyCallback {
-    private OnFragmentInteractionListener mListener;
+    private static MapFragment fragment;
 
+    private OnFragmentInteractionListener mListener;
     private View mView;
+    private Context context;
+
     private MapView mMapView;
     private GoogleMap mGoogleMap;
 
-    private Context context;
 
     private LocationManager locationManager;
     private LocationListener locationListener;
@@ -57,9 +59,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     public static MapFragment newInstance() {
-        MapFragment fragment = new MapFragment();
+        fragment = new MapFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
+        return fragment;
+    }
+
+    public static MapFragment getInstance() {
         return fragment;
     }
 
@@ -100,10 +106,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
                 builder.include(currentLatLng);
-                for(User user: userHashMap.values()) {
-                    builder.include(new LatLng(user.latitude, user.longitude));
-                    addUserMarker(user);
-                    Log.d("user-----", user.firstName);
+                for(Item item : userHashMap.values()) {
+                    builder.include(new LatLng(item.latitude, item.longitude));
+                    addUserMarker(item);
+                    Log.d("item-----", item.firstName);
                 }
                 LatLngBounds bounds = builder.build();
 
@@ -152,8 +158,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            throw new RuntimeException(context.toString() + " must implement OnFragmentInteractionListener");
         }
     }
 
@@ -207,7 +212,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         void onMapFragmentInteraction(Uri uri);
     }
 
-    public void addUserMarker(User user){
+    public void addUserMarker(Item item){
         Bitmap.Config conf = Bitmap.Config.ARGB_8888;
         Bitmap bmp = Bitmap.createBitmap(120, 120, conf);
         Canvas canvas1 = new Canvas(bmp);
@@ -219,14 +224,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         //Modify canvas
         Bitmap resizedProfileBitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(),
-                ProfilePictureHandler.getProfilePictureResourceId(user.id)), 100, 100, true);
+                ProfilePictureHandler.getProfilePictureResourceId(item.id)), 100, 100, true);
         Bitmap croppedProfileBitmap = ImageUtil.cropAsCircle(resizedProfileBitmap);
         canvas1.drawBitmap(croppedProfileBitmap, 0, 0, color);
 
-        LatLng markerLatLng = new LatLng(user.latitude, user.longitude);
+        LatLng markerLatLng = new LatLng(item.latitude, item.longitude);
         MarkerOptions markerOptions = new MarkerOptions()
                 .position(markerLatLng)
-                .title(user.firstName + " " + user.lastName)
+                .title(item.firstName + " " + item.lastName)
 //                .snippet(mainSubject + "\n" + distance + " km")
                 .icon(BitmapDescriptorFactory.fromBitmap(bmp))
                 .anchor(0.5f, 1);

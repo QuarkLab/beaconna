@@ -32,7 +32,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.beacona.common.HeadingTextView
+            <com.voidx.beacona.components.HeadingTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -57,7 +57,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.beacona.common.HeadingTextView
+            <com.voidx.beacona.components.HeadingTextView
                 android:id="@+id/headingTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.beacona.common.HeadingTextView
+            <com.voidx.beacona.components.HeadingTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -108,7 +108,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.beacona.common.HeadingTextView
+            <com.voidx.beacona.components.HeadingTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -133,7 +133,7 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <com.voidx.beacona.common.HeadingTextView
+            <com.voidx.beacona.components.HeadingTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -151,7 +151,7 @@
 
         </LinearLayout>
 
-        <com.voidx.beacona.common.DefaultButton
+        <com.voidx.beacona.components.DefaultButton
             android:id="@+id/button2"
             android:layout_width="150dp"
             android:layout_height="40dp"

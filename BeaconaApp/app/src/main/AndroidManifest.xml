@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/MyWhite">
         <activity
-            android:name="com.voidx.beacona.MainActivity"
+            android:name="com.voidx.beacona.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

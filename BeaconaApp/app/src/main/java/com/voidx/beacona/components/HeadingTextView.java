@@ -1,9 +1,12 @@
-package com.voidx.beacona.common;
+package com.voidx.beacona.components;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+
+import com.voidx.beacona.common.Font;
+import com.voidx.beacona.common.FontCache;
 
 public class HeadingTextView extends android.support.v7.widget.AppCompatTextView {
     public HeadingTextView(Context context) {
