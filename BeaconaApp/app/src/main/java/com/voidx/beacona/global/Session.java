@@ -15,10 +15,16 @@ public class Session {
         lastCurrentLocation.setLatitude(0.0);
         lastCurrentLocation.setLongitude(0.0);
 
-        Item oshaniItem = new Item(1, "Oshani", "", "Weerakoon", lastCurrentLocation.getLatitude() + 0.0025, lastCurrentLocation.getLongitude() + 0.0039, "");
-        Item sumedheItem = new Item(2, "Sumedhe", "", "Dissanayake", lastCurrentLocation.getLatitude() + 0.0004, lastCurrentLocation.getLongitude() + 0.0028, "");
-        Item jinadiItem = new Item(3, "Jinadi", "", "Yasiruka", lastCurrentLocation.getLatitude() + 0.0009, lastCurrentLocation.getLongitude() + 0.0050, "");
-        Item kavindaItem = new Item(4, "Kavinda", "", "Niroshan", lastCurrentLocation.getLatitude() + 0.0051, lastCurrentLocation.getLongitude() + 0.0005, "");
+//        Item oshaniItem = new Item(1, "Oshani", "", "Weerakoon", lastCurrentLocation.getLatitude() + 0.0025, lastCurrentLocation.getLongitude() + 0.0039, "");
+//        Item sumedheItem = new Item(2, "Sumedhe", "", "Dissanayake", lastCurrentLocation.getLatitude() + 0.0004, lastCurrentLocation.getLongitude() + 0.0028, "");
+//        Item jinadiItem = new Item(3, "Jinadi", "", "Yasiruka", lastCurrentLocation.getLatitude() + 0.0009, lastCurrentLocation.getLongitude() + 0.0050, "");
+//        Item kavindaItem = new Item(4, "Kavinda", "", "Niroshan", lastCurrentLocation.getLatitude() + 0.0051, lastCurrentLocation.getLongitude() + 0.0005, "");
+//        Item supulItem = new Item(5, "Supul", "", "Dulanka", 6.918281, 79.862596, "");
+
+        Item oshaniItem = new Item(1, "Oshani", "", "Weerakoon", 6.918281 + 0.0025, 79.862596 + 0.0039, "");
+        Item sumedheItem = new Item(2, "Sumedhe", "", "Dissanayake", 6.918281 + 0.0004, 79.862596+ 0.0028, "");
+        Item jinadiItem = new Item(3, "Jinadi", "", "Yasiruka", 6.918281 + 0.0009, 79.862596 + 0.0050, "");
+        Item kavindaItem = new Item(4, "Kavinda", "", "Niroshan", 6.918281 + 0.0051, 79.862596 + 0.0005, "");
         Item supulItem = new Item(5, "Supul", "", "Dulanka", 6.918281, 79.862596, "");
 
         itemHashMap.put(oshaniItem.id, oshaniItem);

@@ -39,6 +39,8 @@ SettingsFragment.OnFragmentInteractionListener{
      */
     private ViewPager mViewPager;
 
+    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,6 +158,11 @@ SettingsFragment.OnFragmentInteractionListener{
     @Override
     public void onProfileFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     public void onClickAddItemButton(View view) {
