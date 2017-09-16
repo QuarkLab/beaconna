@@ -1,20 +1,30 @@
 <?php
 	require('dbcon.php');
 
-	$item_no = $_POST['item_no'];
-	$item_name = $_POST['item_name'];
-	$item_desc = $_POST['item_desc'];
-	$item_price = $_POST['item_price'];
-	$item_tags = $_POST['item_tags'];
 
-	$mysql = "INSERT INTO items VALUES ('$item_no','$item_name','$item_desc','$item_price','$item_tags')";
+	if ($_SERVER['REQUEST_METHOD'] == 'POST')
+	{
+	  $data = json_decode(file_get_contents("php://input"));
+	  // echo $data->item_no;
 
-	$res = mysqli_query($conn,$mysql);
+		$item_no = $data->item_no;
+		$item_name = $data->item_name;
+		$item_desc = $data->item_desc;
+		$item_price = $data->item_price;
+		$item_tags = $data->item_tags;
 
-	if(!$res){
-		die('Error in insertion');
+		$mysql = "INSERT INTO items VALUES ('$item_no','$item_name','$item_desc','$item_price','$item_tags')";
+
+		$res = mysqli_query($conn,$mysql);
+
+		if(!$res){
+			die('Error in insertion');
+		}
+		else{
+			echo "\n*** Data added successfully! ***\n";
+		}
+
 	}
-	else{
-		header('Location: inventory.php');
-	}
+
+
 ?>
