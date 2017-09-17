@@ -1,8 +1,8 @@
 <?php
 	$server = 'localhost';
 	$username = 'root';
-	$pass = '';
-	$db = 'beaconna';
+	$pass = 'root';
+	$db = 'beacona';
 
 	$conn = mysqli_connect($server,$username,$pass,$db);
 
