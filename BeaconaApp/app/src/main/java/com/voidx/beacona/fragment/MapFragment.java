@@ -27,6 +27,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
@@ -101,7 +102,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             public void onLocationChanged(Location location) {
                 lastCurrentLocation = location;
 
-                LatLng currentLatLng = new LatLng(lastCurrentLocation.getLatitude(), lastCurrentLocation.getLongitude());
+//                LatLng currentLatLng = new LatLng(lastCurrentLocation.getLatitude(), lastCurrentLocation.getLongitude());
+
+                LatLng currentLatLng = new LatLng(6.918281, 79.862596);
 
                 LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
@@ -192,9 +195,28 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
         mGoogleMap.setMyLocationEnabled(true);
 
-        LatLng currentLatLng = new LatLng(lastCurrentLocation.getLatitude(), lastCurrentLocation.getLongitude());
+//        LatLng currentLatLng = new LatLng(lastCurrentLocation.getLatitude(), lastCurrentLocation.getLongitude());
+
+        LatLng currentLatLng = new LatLng(6.918281, 79.862596);
 
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 13));
+
+
+
+        ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        LatLngBounds.Builder builder = new LatLngBounds.Builder();
+
+        builder.include(currentLatLng);
+        for(Item item : itemHashMap.values()) {
+            builder.include(new LatLng(item.latitude, item.longitude));
+            addUserMarker(item);
+            Log.d("item-----", item.firstName);
+        }
+        LatLngBounds bounds = builder.build();
+
+        mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 350));
+        ////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 //        mGoogleMap.addMarker(new MarkerOptions()
 //                .title("Sydney")

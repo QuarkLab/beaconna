@@ -1,20 +1,33 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        key0_config {
+            keyAlias 'key0'
+            keyPassword 'Greencactus'
+            storeFile file('/Users/ivantha/keystores/android.jks')
+            storePassword 'Greencactus'
+        }
+    }
     compileSdkVersion 26
     buildToolsVersion '26.0.0'
     defaultConfig {
         applicationId "com.voidx.seek"
-        minSdkVersion 16
+        minSdkVersion 23
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.key0_config
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.key0_config
+        }
+        debug {
+            signingConfig signingConfigs.key0_config
         }
     }
     productFlavors {
@@ -36,4 +49,6 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'co.lujun:androidtagview:1.1.4'
+    compile 'com.estimote:sdk:1.2.0'
+    compile files('libs/monitoring.jar')
 }
