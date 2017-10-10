@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Wishlist</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-content>
+        <ion-row>
+          <ion-col col-10>
+              <ion-item>
+                  <ion-input #nameInput id="nameInput" type="text" value="" 
+                  placeholder="Add to wishlist" [(ngModel)]="itemName"></ion-input>   
+              </ion-item>             
+          </ion-col>
+          <ion-col col-1>
+              <button ion-button icon-only (click)="addItem(itemName)">
+                  <ion-icon name="add"></ion-icon>
+              </button>
+          </ion-col>
+        </ion-row>
+        <ion-list>
+            <ion-card #itemcard class="item-card animated fadeInLeft" *ngFor="let item of items; let i = index;" (click)="itemClick(i)">
+                <ion-row>
+                    <ion-col col-9>
+                        <ion-card-header>{{item.name}}</ion-card-header>                            
+                    </ion-col>
+                    <ion-col col-3>
+                        <button class="item-card-remove-button" ion-button icon-only clear medium (click)="removeItem(i)">
+                            <ion-icon name="close-circle"></ion-icon>
+                        </button>
+                    </ion-col>
+                </ion-row>
+                
+            </ion-card>
+        </ion-list>
+    </ion-content>
+</ion-content>
