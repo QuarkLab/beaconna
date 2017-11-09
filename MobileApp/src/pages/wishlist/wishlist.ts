@@ -14,7 +14,7 @@ export class WishlistPage {
   private animator: AnimationBuilder;
   public items: ItemModel[] = [];
 
-  @ViewChild('nameInput') nameInputRef: ElementRef;
+  @ViewChild('itemNameInput') nameInputRef: ElementRef;
   @ViewChildren('itemcard') itemCards: QueryList<ElementRef>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -27,9 +27,9 @@ export class WishlistPage {
   }
 
   addItem(name: string){
-    this.items.push(new ItemModel(name));
-
-    //>> Somehow clear the input field
+    // Add item to the front
+    this.items.unshift(new ItemModel(name));
+    this.itemNameInput = '';
   }
 
   removeItem(itemNo: number){

@@ -4,17 +4,18 @@ page-wishlist {
     }
 
     .item-name-input{
-      font-size: 0.9em;
+      font-size: 1.1em;
     }
 
     .item-card{
-        height: 4.0em;
-        border: 0.01em solid #90A4AE;
+        height: 6.0em;
+        border: 0.01em solid #78909C;
         -webkit-box-shadow: none;
         margin-bottom: 0.3em;
+        color: #B3E5FC;
     }
 
     .item-card-header{
-      font-size: 1em;
+      font-size: 1.2em;
     }
 }
