@@ -1,10 +1,20 @@
 page-wishlist {
-    .item-card{
-        height: 60px;
-        border-color: green;
-    }
-
     .item-card-remove-button{
 
+    }
+
+    .item-name-input{
+      font-size: 0.9em;
+    }
+
+    .item-card{
+        height: 4.0em;
+        border: 0.01em solid #90A4AE;
+        -webkit-box-shadow: none;
+        margin-bottom: 0.3em;
+    }
+
+    .item-card-header{
+      font-size: 1em;
     }
 }

@@ -11,13 +11,13 @@ import { AnimationService, AnimationBuilder } from 'css-animator';
   templateUrl: 'wishlist.html',
 })
 export class WishlistPage {
-  private animator: AnimationBuilder;  
+  private animator: AnimationBuilder;
   public items: ItemModel[] = [];
 
   @ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChildren('itemcard') itemCards: QueryList<ElementRef>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
+  constructor(public navCtrl: NavController, public navParams: NavParams,
     public actionSheetCtrl: ActionSheetController, public animationService: AnimationService) {
       this.animator = animationService.builder();
   }
@@ -28,12 +28,12 @@ export class WishlistPage {
 
   addItem(name: string){
     this.items.push(new ItemModel(name));
-    
+
     //>> Somehow clear the input field
   }
 
   removeItem(itemNo: number){
-    this.animator.setType('fadeOutRight').show(this.itemCards.toArray()[itemNo].nativeElement); 
+    this.animator.setType('fadeOutRight').show(this.itemCards.toArray()[itemNo].nativeElement);
     (this.items).splice(itemNo, 1);
   }
 
@@ -43,31 +43,25 @@ export class WishlistPage {
 
   presentActionSheet() {
     const actionSheet = this.actionSheetCtrl.create({
-      title: 'Personalize your wish',
+      title: 'XXXX options',
       buttons: [
         {
-          text: 'Destructive',
-          role: 'destructive',
+          text: 'Personalize',
+          role: 'personalize',
           handler: () => {
             console.log('Destructive clicked');
           }
         },
         {
-          text: 'Archive',
-          handler: () => {
-            console.log('Archive clicked');
-          }
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel',
+          text: 'Show on map',
+          role: 'showonmap',
           handler: () => {
             console.log('Cancel clicked');
           }
         }
       ]
     });
- 
+
     actionSheet.present();
-  } 
+  }
 }
