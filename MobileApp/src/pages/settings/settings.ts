@@ -11,15 +11,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-deals',
-  templateUrl: 'deals.html',
+  templateUrl: 'settings.html',
 })
-export class DealsPage {
+export class SettingsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DealsPage');
+    console.log('ionViewDidLoad SettingsPage');
   }
 
 }

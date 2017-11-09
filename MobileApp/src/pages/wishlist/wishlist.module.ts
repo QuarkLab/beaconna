@@ -7,7 +7,7 @@ import { AnimationService, AnimatesDirective } from 'css-animator';
 @NgModule({
   declarations: [
     WishlistPage,
-    AnimatesDirective    
+    AnimatesDirective
   ],
   imports: [
     IonicPageModule.forChild(WishlistPage),

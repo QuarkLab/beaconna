@@ -17,9 +17,8 @@ export class TabsPage {
 
   mapRoot = 'MapPage'
   wishlistRoot = 'WishlistPage'
-  dealsRoot = 'DealsPage'
   notificationsRoot = 'NotificationsPage'
-
+  settingsRoot = 'SettingsPage'
 
   constructor(public navCtrl: NavController) {}
 }
