@@ -1,9 +1,8 @@
 export class ItemModel{
     name: string;
-    tags: string[] = [];
+    tags: string[] = ["cat", "boat"];
     isLowestPrice: boolean = true;
     isNearest: boolean = true;
-    lowestRating: number = 1;
 
     constructor(name: string){
       this.name = name;
