@@ -3,10 +3,10 @@
 class User extends CI_Controller {
 
     public function login(){
-        $this->load->view('login');
+        $this->load->view('user/login');
     }
 
     public function register(){
-        $this->load->view('register');
+        $this->load->view('user/register');
     }
 }
