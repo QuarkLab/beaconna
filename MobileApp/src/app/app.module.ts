@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { PreferencePopoverPage } from '../pages/preference-popover/preference-popover';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     TabsPage,
+    PreferencePopoverPage
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     TabsPage,
+    PreferencePopoverPage,
   ],
   providers: [
     StatusBar,

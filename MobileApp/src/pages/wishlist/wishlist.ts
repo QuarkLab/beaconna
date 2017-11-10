@@ -1,7 +1,9 @@
 import { ItemModel } from './../../app/models/item.model';
+import { PreferencePopoverPage } from './../preference-popover/preference-popover';
 import { Component, ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ActionSheetController } from 'ionic-angular'
+import { ActionSheetController } from 'ionic-angular';
+import { PopoverController } from 'ionic-angular';
 import { AnimationService, AnimationBuilder } from 'css-animator';
 import { Storage } from '@ionic/storage';
 
@@ -17,7 +19,7 @@ export class WishlistPage {
   @ViewChild('itemNameInput') nameInputRef: ElementRef;
   @ViewChildren('itemcard') itemCards: QueryList<ElementRef>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController,
     public actionSheetCtrl: ActionSheetController, public animationService: AnimationService, public storage: Storage) {
       this.animator = animationService.builder();
       this.storage = storage;
@@ -76,6 +78,7 @@ export class WishlistPage {
           text: 'Personalize',
           role: 'personalize',
           handler: () => {
+            this.presentPreferencesPopover();
             console.log('Destructive clicked');
           }
         },
@@ -90,5 +93,10 @@ export class WishlistPage {
     });
 
     actionSheet.present();
+  }
+
+  presentPreferencesPopover() {
+    let popover = this.popoverCtrl.create(PreferencePopoverPage);
+    popover.present();
   }
 }
