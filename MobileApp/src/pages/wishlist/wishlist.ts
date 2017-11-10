@@ -1,11 +1,12 @@
-import { ItemModel } from './../../app/models/item.model';
-import { PreferencePopoverPage } from './../preference-popover/preference-popover';
 import { Component, ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
 import { AnimationService, AnimationBuilder } from 'css-animator';
 import { Storage } from '@ionic/storage';
+
+import { ItemModel } from './../../app/models/item.model';
+import { PreferencePopoverPage } from './../preference-popover/preference-popover';
 
 @IonicPage()
 @Component({
@@ -16,24 +17,24 @@ export class WishlistPage {
   private animator: AnimationBuilder;
   public itemKeys: ItemModel[] = [];
 
-  private itemNameInput:any;
+  public itemNameInput: any;
 
   @ViewChild('itemNameInput') nameInputRef: ElementRef;
   @ViewChildren('itemcard') itemCards: QueryList<ElementRef>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController,
     public actionSheetCtrl: ActionSheetController, public animationService: AnimationService, public storage: Storage) {
-      this.animator = animationService.builder();
-      this.storage = storage;
-      this.storage.get('itemKeys').then((val) => {
-        if(!val){
-          this.storage.set('itemKeys', []);
-        }
-        this.itemKeys = val;
-      });
+    this.animator = animationService.builder();
+    this.storage = storage;
+    this.storage.get('itemKeys').then((val) => {
+      if (!val) {
+        this.storage.set('itemKeys', []);
+      }
+      this.itemKeys = val;
+    });
   }
 
-  ngOnInit():void{
+  ngOnInit(): void {
     this.storage.get('itemKeys').then((val) => {
       this.itemKeys = val;
     });
@@ -55,20 +56,20 @@ export class WishlistPage {
     });
   }
 
-  addItem(name: string){
+  addItem(name: string) {
     // Add item to the front
     this.itemKeys.unshift(new ItemModel(name));
     this.itemNameInput = "";
-    this.storage.set('itemKeys',this.itemKeys);
+    this.storage.set('itemKeys', this.itemKeys);
   }
 
-  removeItem(itemKeyIndex: number){
+  removeItem(itemKeyIndex: number) {
     this.animator.setType('fadeOutRight').show(this.itemCards.toArray()[itemKeyIndex].nativeElement);
     (this.itemKeys).splice(itemKeyIndex, 1);
-    this.storage.set('itemKeys',this.itemKeys);
+    this.storage.set('itemKeys', this.itemKeys);
   }
 
-  itemClick(itemKeyIndex: number){
+  itemClick(itemKeyIndex: number) {
     this.presentActionSheet(itemKeyIndex);
   }
 
@@ -80,15 +81,14 @@ export class WishlistPage {
           text: 'Personalize',
           role: 'personalize',
           handler: () => {
-            this.presentPreferencesPopover();
-            console.log('Destructive clicked');
+            this.presentPreferencesPopover(itemKeyIndex);
           }
         },
         {
           text: 'Show on map',
           role: 'showonmap',
           handler: () => {
-            console.log('Cancel clicked');
+            console.log('Show on map');
           }
         }
       ]
@@ -97,8 +97,10 @@ export class WishlistPage {
     actionSheet.present();
   }
 
-  presentPreferencesPopover() {
-    let popover = this.popoverCtrl.create(PreferencePopoverPage);
+  presentPreferencesPopover(itemKeyIndex: number) {
+    let popover = this.popoverCtrl.create(PreferencePopoverPage, {
+      keyindex: itemKeyIndex,
+      keys: this.itemKeys});
     popover.present();
   }
 }

@@ -1,6 +1,6 @@
 <body>
 <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="purple" data-image="<?php echo base_url();?>assets/img/sidebar-3.jpg">
         <!--
     Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -13,53 +13,45 @@
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li class="active">
-                    <a href="dashboard.html">
+                <li id="dashboard" class="">
+                    <a href="<?php echo base_url(); ?>index.php/Dashboard?active=dashboard">
                         <i class="material-icons">dashboard</i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./user.html">
+                    <a href="<?php echo base_url(); ?>index.php/Dashboard/Profile">
                         <i class="material-icons">person</i>
                         <p>User Profile</p>
                     </a>
                 </li>
-                <li>
-                    <a href="./table.html">
-                        <i class="material-icons">content_paste</i>
-                        <p>Table List</p>
+                <li id="item" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="material-icons">shopping_basket</i>
+                        <p>Items</p>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/Dashboard/Item">Add Items</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/Dashboard/View_Items">View Items</a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="./typography.html">
-                        <i class="material-icons">library_books</i>
-                        <p>Typography</p>
+                <li id="item" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="material-icons">loyalty</i>
+                        <p>Advertisement</p>
                     </a>
-                </li>
-                <li>
-                    <a href="./icons.html">
-                        <i class="material-icons">bubble_chart</i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./maps.html">
-                        <i class="material-icons">location_on</i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./notifications.html">
-                        <i class="material-icons text-gray">notifications</i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-                <li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="material-icons">unarchive</i>
-                        <p>Upgrade to PRO</p>
-                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/Dashboard/Item">Add Advertisement</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>index.php/Dashboard/View_Items">View Advertisements</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
