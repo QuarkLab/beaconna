@@ -9,8 +9,11 @@
 class Item extends CI_Controller {
 
     public function index(){
+        $data = array(
+            'title' => 'Items - Add'
+        );
         $this->load->view('includes/header');
-        $this->load->view('includes/sidebar');
+        $this->load->view('includes/sidebar',$data);
         $this->load->view('dashboard/item');
         $this->load->view('includes/footer');
     }

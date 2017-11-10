@@ -46,10 +46,10 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/Dashboard/Item">Add Advertisement</a>
+                            <a href="<?php echo base_url(); ?>index.php/Advertisement/add">Add Advertisement</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/Dashboard/View_Items">View Advertisements</a>
+                            <a href="<?php echo base_url(); ?>index.php/Advertisement/view">View Advertisements</a>
                         </li>
                     </ul>
                 </li>
@@ -66,7 +66,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"> Beacona Dashboard </a>
+                    <a class="navbar-brand" href="#"> <?php echo $title ?> </a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
