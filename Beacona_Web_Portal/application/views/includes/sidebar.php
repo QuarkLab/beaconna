@@ -35,7 +35,7 @@
                             <a href="<?php echo base_url(); ?>index.php/Dashboard/Item">Add Items</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/Dashboard/View_Items">View Items</a>
+                            <a href="<?php echo base_url(); ?>index.php/Item/View_Items">View Items</a>
                         </li>
                     </ul>
                 </li>

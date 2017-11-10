@@ -8,18 +8,17 @@
                         <p class="category">Add New Item</p>
                     </div>
                     <div class="card-content">
-                        <form>
+                        <form method="POST" action="<?php echo base_url(); ?>index.php/Item/add_item" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-8" style="">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label">Item Name</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="item_name" class="form-control">
                                         <span class="material-input"></span>
                                     </div>
-
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label">Item Description</label>
-                                        <textarea class="form-control tagarea" rows="5"></textarea>
+                                        <textarea name="item_desc" class="form-control tagarea" rows="5"></textarea>
                                         <span class="material-input"></span>
                                     </div>
                                 </div>
@@ -31,7 +30,7 @@
                                         <span class="btn btn-raised btn-round btn-default btn-file">
                                             <span class="fileinput-new">Add Photo</span>
                                         <span class="fileinput-exists">Change</span>
-                                        <input type="file" name="..." /></span>
+                                        <input type="file" name="userfile" size="20"/></span>
                                             <br/>
                                             <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
                                         </div>
@@ -41,19 +40,20 @@
                                 <div class="col-md-6" style="">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label">Item Tags</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="item_tags" class="form-control">
                                         <span class="material-input"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label">Item Price</label>
-                                        <input type="number" class="form-control">
+                                        <input type="number" name="item_price" class="form-control">
                                         <span class="material-input"></span>
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+
+                            <button type="submit" class="btn btn-primary pull-right">Add Item</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
