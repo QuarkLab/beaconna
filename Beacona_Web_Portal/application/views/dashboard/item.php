@@ -26,7 +26,7 @@
                                 <div class="col-md-4">
                                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                                         <div class="">
-                                            <img src="<?php echo base_url(); ?>assets/img/avatar-placeholder.png" alt="..." style="width: 100px;">
+                                            <img src="<?php echo base_url(); ?>assets/img/avatar-placeholder.png" alt="..." style="width: 120px;">
                                         </div>
                                         <span class="btn btn-raised btn-round btn-default btn-file">
                                             <span class="fileinput-new">Add Photo</span>
@@ -50,46 +50,6 @@
                                         <label class="control-label">Item Price</label>
                                         <input type="number" class="form-control">
                                         <span class="material-input"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-
-                                <div class="col-md-12">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Adress</label>
-                                        <input type="text" class="form-control">
-                                        <span class="material-input"></span></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">City</label>
-                                        <input type="text" class="form-control">
-                                        <span class="material-input"></span></div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Country</label>
-                                        <input type="text" class="form-control">
-                                        <span class="material-input"></span></div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Postal Code</label>
-                                        <input type="text" class="form-control">
-                                        <span class="material-input"></span></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>About Me</label>
-                                        <div class="form-group label-floating is-empty">
-                                            <label class="control-label"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                            <textarea class="form-control" rows="5"></textarea>
-                                            <span class="material-input"></span></div>
                                     </div>
                                 </div>
                             </div>

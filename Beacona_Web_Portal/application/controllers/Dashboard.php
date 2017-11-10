@@ -18,4 +18,8 @@ class Dashboard extends CI_Controller {
     public function item(){
         redirect('index.php/Item');
     }
+
+    public function Profile(){
+        redirect('index.php/Profile');
+    }
 }
