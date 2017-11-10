@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'apramodya',
-	'password' => '',
+	'hostname' => '184.72.164.154',
+	'username' => 'admin',
+	'password' => 'creative',
 	'database' => 'beacona_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
