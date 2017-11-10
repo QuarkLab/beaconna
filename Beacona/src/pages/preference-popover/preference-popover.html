@@ -1,0 +1,79 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content style="padding: 1em;">
+  <ion-title>{{itemKeys[itemKeyIndex].name}} preferences</ion-title>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        Tags
+      </ion-col>
+      <ion-row>
+          <ion-col col-9>
+              <ion-item>
+                  <ion-input #nameInput id="tagInput" class="tag-name-input" type="text" value=""
+                  placeholder="Add tag" [(ngModel)]="tagNameInput" clearInput></ion-input>
+              </ion-item>
+          </ion-col>
+          <ion-col col-1>
+              <button ion-button icon-only (click)="addTag(tagNameInput)">
+                  <ion-icon name="add"></ion-icon>
+              </button>
+          </ion-col>
+        </ion-row>
+      <ion-col col-12>
+        <ion-chip *ngFor="let tag of (itemKeys[itemKeyIndex]).tags; let i = index;" 
+        style="margin-right: 1em;">
+          <ion-label>{{tag}}</ion-label>
+          <button ion-button clear color="light" (click)="deleteChip(i)">
+            <ion-icon name="close-circle"></ion-icon>
+          </button>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+    <ion-row radio-group>
+      <ion-col col-12>
+        Price
+      </ion-col>
+      <ion-col col-6>
+        <ion-item>
+          <ion-label>Low</ion-label>
+          <ion-radio value="l" checked="{{(itemKeys[itemKeyIndex]).isLowestPrice == true}}"
+          (click)="setPrice(true)"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <ion-item>
+          <ion-label>High</ion-label>
+          <ion-radio value="h" checked="{{(itemKeys[itemKeyIndex]).isLowestPrice == false}}"
+          (click)="setPrice(false)"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row radio-group>
+        <ion-col col-12>
+            Location
+          </ion-col>
+          <ion-col col-6>
+            <ion-item>
+              <ion-label>Near</ion-label>
+              <ion-radio value="n" checked="{{(itemKeys[itemKeyIndex]).isNearest == true}}"
+              (click)="setLocation(true)"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item>
+              <ion-label>Far</ion-label>
+              <ion-radio value="f" checked="{{(itemKeys[itemKeyIndex]).isNearest == false}}"
+              (click)="setLocation(false)"></ion-radio>
+            </ion-item>
+          </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
