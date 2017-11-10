@@ -54,23 +54,23 @@ export class WishlistPage {
   addItem(name: string){
     // Add item to the front
     this.itemKeys.unshift(new ItemModel(name));
-    this.itemNameInput = "";
+    // this.itemNameInput = "";
     this.storage.set('itemKeys',this.itemKeys);
   }
 
-  removeItem(itemKeyNo: number){
-    this.animator.setType('fadeOutRight').show(this.itemCards.toArray()[itemKeyNo].nativeElement);
-    (this.itemKeys).splice(itemKeyNo, 1);
+  removeItem(itemKeyIndex: number){
+    this.animator.setType('fadeOutRight').show(this.itemCards.toArray()[itemKeyIndex].nativeElement);
+    (this.itemKeys).splice(itemKeyIndex, 1);
     this.storage.set('itemKeys',this.itemKeys);
   }
 
-  itemClick(itemKeyNo: number){
-    this.presentActionSheet(itemKeyNo);
+  itemClick(itemKeyIndex: number){
+    this.presentActionSheet(itemKeyIndex);
   }
 
-  presentActionSheet(itemKeyNo: number) {
+  presentActionSheet(itemKeyIndex: number) {
     const actionSheet = this.actionSheetCtrl.create({
-      title: this.itemKeys[itemKeyNo].name + ' options',
+      title: this.itemKeys[itemKeyIndex].name + '\'s options',
       buttons: [
         {
           text: 'Personalize',

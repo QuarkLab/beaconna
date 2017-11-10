@@ -24,7 +24,7 @@
           <ion-row>
             <ion-col col-12>
               <ion-list>
-                      <ion-card #itemcard class="item-card animated fadeInLeft" *ngFor="let item of itemKeys; let i = index;" (click)="itemClick(i)">
+                      <ion-card #itemcard class="item-card animated fadeInLeft" *ngFor="let item of itemKeys; let i = index;" (press)="itemClick(i)">
                           <ion-row>
                               <ion-col col-9>
                                   <ion-card-header class="item-card-header">{{item.name}}</ion-card-header>
