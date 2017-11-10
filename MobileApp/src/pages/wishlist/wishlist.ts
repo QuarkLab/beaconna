@@ -16,6 +16,8 @@ export class WishlistPage {
   private animator: AnimationBuilder;
   public itemKeys: ItemModel[] = [];
 
+  private itemNameInput:any;
+
   @ViewChild('itemNameInput') nameInputRef: ElementRef;
   @ViewChildren('itemcard') itemCards: QueryList<ElementRef>;
 
@@ -56,7 +58,7 @@ export class WishlistPage {
   addItem(name: string){
     // Add item to the front
     this.itemKeys.unshift(new ItemModel(name));
-    // this.itemNameInput = "";
+    this.itemNameInput = "";
     this.storage.set('itemKeys',this.itemKeys);
   }
 
