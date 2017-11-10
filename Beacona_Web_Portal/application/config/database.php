@@ -74,10 +74,10 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'ec2-184-72-164-154.compute-1.amazonaws.com',
-	'hostname' => '127.0.0.1',
-	'username' => 'root',
-	'password' => 'creative',
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'apramodya',
+	'password' => '',
 	'database' => 'beacona_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
