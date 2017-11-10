@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '184.72.164.154',
+//	'hostname' => '184.72.164.154',
 //    'username' => 'admin',
 //    'password' => 'creative',
-//    'hostname' => 'localhost',
+    'hostname' => 'localhost',
     'username' => 'admin',
     'password' => 'creative',
 	'database' => 'beacona_db',

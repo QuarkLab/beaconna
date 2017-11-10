@@ -10,20 +10,22 @@ class Item extends CI_Controller {
 
     public function index(){
         $this->load->library('upload');
-
+        $data = array(
+            'title' => '<b>Item</b> - Add',
+        );
         $this->load->view('includes/header');
-        $this->load->view('includes/sidebar');
+        $this->load->view('includes/sidebar',$data);
         $this->load->view('item/item');
         $this->load->view('includes/footer');
     }
 
     public function view_items(){
         $data = array(
-            'title' => 'Items - Add'
+            'title' => '<b>Item</b> - View',
         );
         $this->load->view('includes/header');
         $this->load->view('includes/sidebar',$data);
-        $this->load->view('dashboard/item');
+        $this->load->view('item/view_items');
         $this->load->view('includes/footer');
     }
 
