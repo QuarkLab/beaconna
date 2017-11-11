@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/beacona/beacona_web_portal';
+$config['base_url'] = 'http://http://184.72.164.154/beacona/beacona_web_portal';
 
 /*
 |--------------------------------------------------------------------------
