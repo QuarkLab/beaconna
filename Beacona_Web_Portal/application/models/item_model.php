@@ -47,4 +47,10 @@ class Item_model extends CI_Model{
 
     }
 
+    public function view_items(){
+        $res = $this->db->get('item');
+
+        return $res->result();
+    }
+
 }

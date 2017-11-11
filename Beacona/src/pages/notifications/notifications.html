@@ -15,4 +15,72 @@
 
 <ion-content padding>
 
+  <div class="" *ngFor="let item of notifications">
+        
+      <!-- General Ad -->
+      <ion-card *ngIf="item.type == '1'">
+        <ion-thumbnail item-start>
+            <img src="{{ item.thumbnail }}">
+          </ion-thumbnail>
+        <ion-card-content> {{ item.description }} </ion-card-content>
+      </ion-card>
+
+      <!-- General Notification -->
+      <ion-card *ngIf="item.type == '2'">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="{{ item.thumbnail }}">
+            </ion-thumbnail>
+            <h2>{{ item.name }}</h2>
+            <h3>{{ item.shopName}}</h3>
+    
+            <h5>
+                <span item-left> {{ item.price }}</span>
+                <span item-left>  </span>
+                <b><span item-right></span></b>    
+            </h5>
+          </ion-item>
+        </ion-card>
+
+        <!-- No image Ad -->
+        <!-- <ion-card *ngIf="item.type == '3'">
+            <ion-card-header>
+              Header
+            </ion-card-header>
+            <ion-card-content>
+              The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+            </ion-card-content>
+          </ion-card> -->
+
+
+
+        <!-- CARD -->
+        <ion-card  *ngIf="item.type == '3'">
+            
+              <img src="{{ item.thumbnail }}">            
+              <ion-item>
+                  <!-- <ion-icon name="mail" item-left large ></ion-icon> -->
+                  <h2>Cool Planet</h2>
+                  <p>61, Isipathana Mawatha, Colombo</p>
+                </ion-item>
+
+              <ion-item>
+                <!-- <ion-icon name="football" item-start large></ion-icon> -->
+                <h2>Opal</h2>
+                <p>De S. Jayasinghe Mawatha, Nugegoda</p>
+              </ion-item>
+            
+              <ion-item>
+                <!-- <span item-left>Limited Offer</span> -->
+                <!-- <span item-left>(2.6 mi)</span> -->
+                <button ion-button icon-left clear item-end>
+                  <ion-icon name="map"></ion-icon>
+                  Show in map
+                </button>
+              </ion-item>
+            
+            </ion-card>
+
+    </div>
+
 </ion-content>

@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12"></div>
         <div class="card">
             <div class="card-header" data-background-color="purple">
                 <h4 class="title">View Items</h4>
@@ -9,29 +9,28 @@
                 <table class="table">
                     <thead class="text-primary">
                     <tr>
+                        <th>Item Id</th>
                         <th>Item Image</th>
                         <th>Item Name</th>
                         <th>Item Description</th>
                         <th>Item Price</th>
                         <th>Item Qty</th>
-                        <th>Item Tags</th>
+<!--                        <th>Item Tags</th>-->
                     </tr></thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td class="text-primary">$36,738</td>
-                        <td></td>
-                    </tr>
-                    <tr><td></td>
-                        <td>Minerva Hooper</td>
-                        <td>Curaçao</td>
-                        <td>Sinaai-Waas</td>
-                        <td class="text-primary">$23,789</td>
-                        <td></td>
-                    </tr>
+                    <?php
+                        $base = base_url();
+                        $base = $base.'assets/uploads/';
+                        foreach ($items as $item){
+                            echo "<tr>";
+                            echo "<td>$item->id</td>";
+                            echo "<td><img src='$base$item->image' style='width: 70px;' </td>";
+                            echo "<td>$item->name</td>";
+                            echo "<td>$item->description</td>";
+                            echo "<td>$item->base_price</td>";
+                            echo "<td>$item->quantity</td>";
+                        }
+                    ?>
                     </tbody>
                 </table>
             </div>

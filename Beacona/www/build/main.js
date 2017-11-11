@@ -56,10 +56,13 @@ var MapPage = (function () {
         this.map = new google.maps.Map(this.mapRef.nativeElement, options);
         this.addMarker(this.location, this.map);
         this.addMarker(l2, this.map);
-        for (var i = 0; i < this.shops.length; i++) {
-            var loc = new google.maps.LatLng(this.shops[i].latitudes + 6.856254, this.shops[i].longitudes + 79.90455);
-            this.addMarker(loc, this.map);
-        }
+        // for (var i = 0; i < this.shops.length; i++) { 
+        //   var loc = new google.maps.LatLng(this.shops[i].latitudes + 7.856254, 
+        //     this.shops[i].longitudes + 80.90455);
+        //   // this.addMarker(loc, this.map);
+        //   var dogwalkMarker = new google.maps.Marker({position: loc, title: 'asdasd'});
+        //   dogwalkMarker.setMap(this.map);
+        // }
         this.geolocation.getCurrentPosition().then(function (resp) {
             if (_this.isNumeric(resp.coords.latitude) && _this.isNumeric(resp.coords.longitude)) {
                 _this.location = new google.maps.LatLng(resp.coords.latitude, resp.coords.longitude);
@@ -72,10 +75,24 @@ var MapPage = (function () {
                 _this.map = new google.maps.Map(_this.mapRef.nativeElement, options);
                 console.log(resp.coords.latitude);
                 console.log(resp.coords.longitude);
+                for (var i = 0; i < 10; i++) {
+                    _this.landmark(i + 7.856254, i + 80.90455);
+                }
+                _this.landmark(8.856254, 81.90455);
             }
         }).catch(function (error) {
             console.log('Error getting location', error);
         });
+    };
+    MapPage.prototype.landmark = function (a, b) {
+        location = new google.maps.LatLng(a, b);
+        var options = {
+            center: location,
+            zoom: 16,
+            streetViewControl: false,
+            mapTypeId: 'roadmap'
+        };
+        this.map = new google.maps.Map(this.mapRef.nativeElement, options);
     };
     MapPage.prototype.addMarker = function (position, map) {
         return new google.maps.Marker({
@@ -415,13 +432,33 @@ var NotificationsPage = (function () {
     function NotificationsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.num = 10;
+        this.notifications = [
+            { id: 1, name: 'Pizza Hut Offers', description: 'Pizza Hut Offers! Discounts from 20% for the Credit/Debit card holders',
+                type: '1', price: 'Rs. 100.00', shopName: 'PizzaHut', distance: '5km',
+                thumbnail: 'assets/imgs/kabajees.png', },
+            { id: 1, name: 'Carrot', description: 'Fresh Vegetables',
+                type: '2', price: 'Rs. 150.00 (20% OFF)', shopName: 'Cargills Food City', distance: '5km',
+                thumbnail: 'assets/imgs/carrot.png', },
+            { id: 1, name: 'Item 3', description: 'Description of item 1',
+                type: '3', price: 'Rs. 100.00', shopName: 'PizzaHut', distance: '5km',
+                thumbnail: 'assets/imgs/clothe.png', },
+            { id: 1, name: 'Woman Handbag', description: 'Odel',
+                type: '2', price: 'Rs. 900.00 (Limited)', shopName: 'Odel, Nugegoda', distance: '5km',
+                thumbnail: 'assets/imgs/handbag.jpg', },
+        ];
     }
     NotificationsPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad NotificationsPage');
+        // this.notifications = [new Notification('First'), new Notification('Second'), new Notification('Third')];
+        // var a:Notification = new Notification('xx');
+        // this.num = a.name;
+    };
+    NotificationsPage.prototype.loadNotifications = function () {
     };
     NotificationsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-notifications',template:/*ion-inline-start:"/Users/ivantha/Git/beacona/Beacona/src/pages/notifications/notifications.html"*/`<!--\n  Generated template for the NotificationsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Notifications</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n`/*ion-inline-end:"/Users/ivantha/Git/beacona/Beacona/src/pages/notifications/notifications.html"*/,
+            selector: 'page-notifications',template:/*ion-inline-start:"/Users/ivantha/Git/beacona/Beacona/src/pages/notifications/notifications.html"*/`<!--\n  Generated template for the NotificationsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Notifications</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <div class="" *ngFor="let item of notifications">\n        \n      <!-- General Ad -->\n      <ion-card *ngIf="item.type == \'1\'">\n        <ion-thumbnail item-start>\n            <img src="{{ item.thumbnail }}">\n          </ion-thumbnail>\n        <ion-card-content> {{ item.description }} </ion-card-content>\n      </ion-card>\n\n      <!-- General Notification -->\n      <ion-card *ngIf="item.type == \'2\'">\n          <ion-item>\n            <ion-thumbnail item-start>\n              <img src="{{ item.thumbnail }}">\n            </ion-thumbnail>\n            <h2>{{ item.name }}</h2>\n            <h3>{{ item.shopName}}</h3>\n    \n            <h5>\n                <span item-left> {{ item.price }}</span>\n                <span item-left>  </span>\n                <b><span item-right></span></b>    \n            </h5>\n          </ion-item>\n        </ion-card>\n\n        <!-- No image Ad -->\n        <!-- <ion-card *ngIf="item.type == \'3\'">\n            <ion-card-header>\n              Header\n            </ion-card-header>\n            <ion-card-content>\n              The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.\n            </ion-card-content>\n          </ion-card> -->\n\n\n\n        <!-- CARD -->\n        <ion-card  *ngIf="item.type == \'3\'">\n            \n              <img src="{{ item.thumbnail }}">            \n              <ion-item>\n                  <!-- <ion-icon name="mail" item-left large ></ion-icon> -->\n                  <h2>Cool Planet</h2>\n                  <p>61, Isipathana Mawatha, Colombo</p>\n                </ion-item>\n\n              <ion-item>\n                <!-- <ion-icon name="football" item-start large></ion-icon> -->\n                <h2>Opal</h2>\n                <p>De S. Jayasinghe Mawatha, Nugegoda</p>\n              </ion-item>\n            \n              <ion-item>\n                <!-- <span item-left>Limited Offer</span> -->\n                <!-- <span item-left>(2.6 mi)</span> -->\n                <button ion-button icon-left clear item-end>\n                  <ion-icon name="map"></ion-icon>\n                  Show in map\n                </button>\n              </ion-item>\n            \n            </ion-card>\n\n    </div>\n\n</ion-content>\n`/*ion-inline-end:"/Users/ivantha/Git/beacona/Beacona/src/pages/notifications/notifications.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], NotificationsPage);
@@ -459,12 +496,11 @@ var SettingsPage = (function () {
     };
     SettingsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-deals',template:/*ion-inline-start:"/Users/ivantha/Git/beacona/Beacona/src/pages/settings/settings.html"*/`<!--\n  Generated template for the DealsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list no-lines>\n    \n    \n    \n    </ion-list>\n</ion-content>\n`/*ion-inline-end:"/Users/ivantha/Git/beacona/Beacona/src/pages/settings/settings.html"*/,
+            selector: 'page-deals',template:/*ion-inline-start:"/Users/ivantha/Git/beacona/Beacona/src/pages/settings/settings.html"*/`<!--\n  Generated template for the DealsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-row style="margin-top:1em">\n      <ion-item>\n          <ion-label> Track  My Location </ion-label>\n          <ion-toggle checked="true"></ion-toggle>\n      </ion-item>\n  </ion-row>\n\n  <ion-item>\n      Remove Ads\n      <ion-badge item-end>PRO</ion-badge>\n  </ion-item>\n\n  <ion-card>\n      <img src="assets/imgs/user.png" style="height: 15em;\n      width: auto;\n      margin: auto;\n      display: block;"/>\n      <ion-card-content>\n        <ion-card-title>\n          Team Void\n          </ion-card-title>\n        <p style="white-space: pre;">\n          <b>\n          Question? FeedBack?\n          Contact Us right away.... \n          Phone : 071 123 4567 \n          Email : TeamVoid@gmail.com \n          Facebook : www.facebook.com/team_void </b>\n        </p>\n      </ion-card-content>\n    </ion-card>\n</ion-content>\n`/*ion-inline-end:"/Users/ivantha/Git/beacona/Beacona/src/pages/settings/settings.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], SettingsPage);
     return SettingsPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=settings.js.map
@@ -669,10 +705,10 @@ var MapStyle = [
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemModel; });
 var ItemModel = (function () {
     function ItemModel(name) {
-        this.tags = ["cat", "boat"];
         this.isLowestPrice = true;
         this.isNearest = true;
         this.name = name;
+        this.tags = [name];
     }
     return ItemModel;
 }());
