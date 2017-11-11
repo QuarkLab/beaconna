@@ -20,12 +20,16 @@ class Item extends CI_Controller {
     }
 
     public function view_items(){
-        $data = array(
+        $this->load->model('item_model');
+
+        $sidebar = array(
             'title' => '<b>Item</b> - View',
         );
+
+        $data['items'] = $this->item_model->view_items();
         $this->load->view('includes/header');
-        $this->load->view('includes/sidebar',$data);
-        $this->load->view('item/view_items');
+        $this->load->view('includes/sidebar',$sidebar);
+        $this->load->view('item/view_items',$data);
         $this->load->view('includes/footer');
     }
 
