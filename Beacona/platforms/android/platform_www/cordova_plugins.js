@@ -1,13 +1,62 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
-    "id": "ionic-plugin-keyboard.keyboard",
-    "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
-    "pluginId": "ionic-plugin-keyboard",
-    "clobbers": [
-      "cordova.plugins.Keyboard"
-    ],
+    "id": "com.unarin.cordova.beacon.underscorejs",
+    "file": "plugins/com.unarin.cordova.beacon/www/lib/underscore-min-1.6.js",
+    "pluginId": "com.unarin.cordova.beacon",
     "runs": true
+  },
+  {
+    "id": "com.unarin.cordova.beacon.Q",
+    "file": "plugins/com.unarin.cordova.beacon/www/lib/q.min.js",
+    "pluginId": "com.unarin.cordova.beacon",
+    "runs": true
+  },
+  {
+    "id": "com.unarin.cordova.beacon.LocationManager",
+    "file": "plugins/com.unarin.cordova.beacon/www/LocationManager.js",
+    "pluginId": "com.unarin.cordova.beacon",
+    "merges": [
+      "cordova.plugins"
+    ]
+  },
+  {
+    "id": "com.unarin.cordova.beacon.Delegate",
+    "file": "plugins/com.unarin.cordova.beacon/www/Delegate.js",
+    "pluginId": "com.unarin.cordova.beacon",
+    "runs": true
+  },
+  {
+    "id": "com.unarin.cordova.beacon.Region",
+    "file": "plugins/com.unarin.cordova.beacon/www/model/Region.js",
+    "pluginId": "com.unarin.cordova.beacon",
+    "runs": true
+  },
+  {
+    "id": "com.unarin.cordova.beacon.Regions",
+    "file": "plugins/com.unarin.cordova.beacon/www/Regions.js",
+    "pluginId": "com.unarin.cordova.beacon",
+    "runs": true
+  },
+  {
+    "id": "com.unarin.cordova.beacon.CircularRegion",
+    "file": "plugins/com.unarin.cordova.beacon/www/model/CircularRegion.js",
+    "pluginId": "com.unarin.cordova.beacon",
+    "runs": true
+  },
+  {
+    "id": "com.unarin.cordova.beacon.BeaconRegion",
+    "file": "plugins/com.unarin.cordova.beacon/www/model/BeaconRegion.js",
+    "pluginId": "com.unarin.cordova.beacon",
+    "runs": true
+  },
+  {
+    "id": "cordova-plugin-ble.BLE",
+    "file": "plugins/cordova-plugin-ble/ble.js",
+    "pluginId": "cordova-plugin-ble",
+    "clobbers": [
+      "evothings.ble"
+    ]
   },
   {
     "id": "cordova-plugin-device.device",
@@ -18,20 +67,26 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-splashscreen.SplashScreen",
-    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-    "pluginId": "cordova-plugin-splashscreen",
+    "id": "cordova-plugin-eddystone.eddystoneplugin",
+    "file": "plugins/cordova-plugin-eddystone/js/eddystone-plugin.js",
+    "pluginId": "cordova-plugin-eddystone",
     "clobbers": [
-      "navigator.splashscreen"
+      "evothings.eddystone"
     ]
   },
   {
-    "id": "cordova-sqlite-storage.SQLitePlugin",
-    "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
-    "pluginId": "cordova-sqlite-storage",
+    "id": "cordova-plugin-geolocation.geolocation",
+    "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+    "pluginId": "cordova-plugin-geolocation",
     "clobbers": [
-      "SQLitePlugin"
+      "navigator.geolocation"
     ]
+  },
+  {
+    "id": "cordova-plugin-geolocation.PositionError",
+    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "runs": true
   },
   {
     "id": "cordova-plugin-googlemaps.BaseClass",
@@ -204,31 +259,54 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-geolocation.geolocation",
-    "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
-    "pluginId": "cordova-plugin-geolocation",
+    "id": "cordova-plugin-splashscreen.SplashScreen",
+    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+    "pluginId": "cordova-plugin-splashscreen",
     "clobbers": [
-      "navigator.geolocation"
+      "navigator.splashscreen"
     ]
   },
   {
-    "id": "cordova-plugin-geolocation.PositionError",
-    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
-    "pluginId": "cordova-plugin-geolocation",
+    "id": "cordova-sqlite-storage.SQLitePlugin",
+    "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+    "pluginId": "cordova-sqlite-storage",
+    "clobbers": [
+      "SQLitePlugin"
+    ]
+  },
+  {
+    "id": "ionic-plugin-keyboard.keyboard",
+    "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+    "pluginId": "ionic-plugin-keyboard",
+    "clobbers": [
+      "cordova.plugins.Keyboard"
+    ],
     "runs": true
+  },
+  {
+    "id": "cordova-plugin-estimote.EstimoteBeacons",
+    "file": "plugins/cordova-plugin-estimote/plugin/src/js/EstimoteBeacons.js",
+    "pluginId": "cordova-plugin-estimote",
+    "clobbers": [
+      "estimote"
+    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "ionic-plugin-keyboard": "2.2.1",
-  "cordova-plugin-whitelist": "1.3.1",
+  "com.unarin.cordova.beacon": "3.5.2",
+  "cordova-plugin-ble": "2.0.1",
   "cordova-plugin-device": "1.1.4",
-  "cordova-plugin-splashscreen": "4.0.3",
-  "cordova-plugin-ionic-webview": "1.1.16",
-  "cordova-sqlite-storage": "2.1.1",
+  "cordova-plugin-eddystone": "1.3.0",
+  "cordova-plugin-geolocation": "2.4.3",
   "cordova-plugin-googlemaps": "2.1.1",
-  "cordova-plugin-geolocation": "2.4.3"
+  "cordova-plugin-ionic-webview": "1.1.16",
+  "cordova-plugin-splashscreen": "4.0.3",
+  "cordova-plugin-whitelist": "1.3.1",
+  "cordova-sqlite-storage": "2.1.1",
+  "ionic-plugin-keyboard": "2.2.1",
+  "cordova-plugin-estimote": "0.8.0"
 };
 // BOTTOM OF METADATA
 });

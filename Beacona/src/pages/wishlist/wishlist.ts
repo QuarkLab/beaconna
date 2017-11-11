@@ -7,6 +7,8 @@ import { Storage } from '@ionic/storage';
 
 import { ItemModel } from './../../app/models/item.model';
 import { PreferencePopoverPage } from './../preference-popover/preference-popover';
+import { MapPage } from './../map/map';
+import { ShopModel } from '../../app/models/shop.model';
 
 @Component({
   selector: 'page-wishlist',
@@ -87,7 +89,7 @@ export class WishlistPage {
           text: 'Show on map',
           role: 'showonmap',
           handler: () => {
-            console.log('Show on map');
+            this.presentMapPage();
           }
         }
       ]
@@ -101,5 +103,17 @@ export class WishlistPage {
       keyindex: itemKeyIndex,
       keys: this.itemKeys});
     popover.present();
+  }
+
+  presentMapPage(){
+    let shops: ShopModel[] = [];
+    shops.push(new ShopModel('Pizzahut', 0.05, 1, 'img/pizzahut.png'));
+    shops.push(new ShopModel('Food City', 0.1, 0.05, 'img/foodcity.png'));
+    shops.push(new ShopModel('Keels Super', 0.02, 1.2, 'img/keels.png'));
+
+
+    this.navCtrl.push(MapPage, {
+      sp: shops
+  });
   }
 }

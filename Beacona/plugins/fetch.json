@@ -73,5 +73,37 @@
     },
     "is_top_level": false,
     "variables": {}
+  },
+  "cordova-plugin-eddystone": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-eddystone"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-ble": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ble"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "com.unarin.cordova.beacon": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ibeacon"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-estimote": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-estimote"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
